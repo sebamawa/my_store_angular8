@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private cartService: CartService
+  ) { 
+    console.log('Creacion de component: TopBarComponent');
+  }
+
+  getCartItemsQuantity(): Number {
+    return this.cartService.getItemsQuantity;
+  }
 
   ngOnInit() {
   }
