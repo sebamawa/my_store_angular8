@@ -14,13 +14,13 @@ export class CartService {
   addToCart(product) {
     // console.log('Llamada a metodo CartService: addToCart()');
     this.items.push(product);
-  }  
+  }
 
   getItems() {
     return this.items;
   }
 
-  get getItemsQuantity() {
+  getItemsQuantity() {
     // console.log('Llamada a metodo CartService: getItemQuantity()');
     return this.items.length;
   }

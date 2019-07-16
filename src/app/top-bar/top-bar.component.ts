@@ -10,12 +10,12 @@ export class TopBarComponent implements OnInit {
 
   constructor(
     private cartService: CartService
-  ) { 
+  ) {
     console.log('Creacion de component: TopBarComponent');
   }
 
-  getCartItemsQuantity(): Number {
-    return this.cartService.getItemsQuantity;
+  getCartItemsQuantity(): number {
+    return this.cartService.getItemsQuantity();
   }
 
   ngOnInit() {

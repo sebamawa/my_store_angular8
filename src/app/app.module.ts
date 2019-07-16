@@ -12,6 +12,7 @@ import { CartComponent } from './cart/cart.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ShippingComponent } from './shipping/shipping.component';
+import { CustomerListComponent } from './Lavadero/customer-list/customer-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ShippingComponent } from './shipping/shipping.component';
     ProductAlertsComponent,
     ProductDetailsComponent,
     CartComponent,
-    ShippingComponent
+    ShippingComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,10 @@ import { ShippingComponent } from './shipping/shipping.component';
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
-      { path: 'shipping', component: ShippingComponent }
+      { path: 'shipping', component: ShippingComponent },
+
+      // lavadero
+      { path: 'customersLavadero', component: CustomerListComponent }
     ])
   ],
   providers: [],
