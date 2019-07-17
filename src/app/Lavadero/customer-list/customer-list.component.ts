@@ -9,18 +9,34 @@ import { CustomerService } from '../customer.service';
 })
 export class CustomerListComponent implements OnInit {
   customers: Customer[];
+  loading: boolean; // muestra puntos de carga en la view mientras se espera el response
+  error: boolean;	
 
   constructor(
-    private customerService: CustomerService
-  ) { }
+	private customerService: CustomerService
+  ) {
+	  this.loading = true;
+	  this.error = true;
+   }
 
   getCustomersLavadero(): void {
-    this.customerService.getCustomersLavadero()
-    .subscribe(customers => this.customers = customers);
+	// this.loading = false;		
+	this.customerService.getCustomersLavadero()
+	.subscribe(customers => {
+		// console.log('NO HAY ERROR');
+		this.loading = false;
+		this.error = false;
+		this.customers = customers;
+	 },
+	 err => {
+		// console.log('HAY ERROR');
+		this.loading = false;
+		this.error = true;
+	 });    
   }
 
   ngOnInit() {
-    this.getCustomersLavadero();
+	this.getCustomersLavadero();
   }
 
 }

@@ -1,8 +1,15 @@
 <h2>Customers</h2>
 
-<div class="shipping-item" *ngFor="let customer of customers">
-    <span>{{ customer.name }}</span>
-    <span>{{ customer.telephone }}</span>
-</div>
+<div *ngIf="loading">loading...</div>  
+<ng-container *ngIf="customers?.length > 0 else tagNotCustomers">
+   
+    <div class="shipping-item" *ngFor="let customer of customers">
+            <span>{{ customer.name }}</span>
+            <span>{{ customer.telephone }}</span>
+    </div>
+   
+</ng-container>
 
-
+<ng-template #tagNotCustomers>
+    <div *ngIf="!error">There are not customers</div>
+</ng-template>
