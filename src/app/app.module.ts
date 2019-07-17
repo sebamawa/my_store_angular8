@@ -13,6 +13,7 @@ import { CartComponent } from './cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShippingComponent } from './shipping/shipping.component';
 import { CustomerListComponent } from './Lavadero/customer-list/customer-list.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CustomerListComponent } from './Lavadero/customer-list/customer-list.co
     ProductDetailsComponent,
     CartComponent,
     ShippingComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
