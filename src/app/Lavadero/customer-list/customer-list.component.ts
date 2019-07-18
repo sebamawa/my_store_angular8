@@ -22,16 +22,17 @@ export class CustomerListComponent implements OnInit {
   getCustomersLavadero(): void {
 	// this.loading = false;		
 	this.customerService.getCustomersLavadero()
-	.subscribe(customers => {
+	.subscribe(
+		customers => {
 		// console.log('NO HAY ERROR');
 		this.loading = false;
 		this.error = false;
 		this.customers = customers;
 	 },
-	 err => {
-		// console.log('HAY ERROR');
-		this.loading = false;
-		this.error = true;
+		err => {
+			// console.log(`Error en CustomerListComponent: ${err}`);
+			this.loading = false;
+			this.error = true;
 	 });    
   }
 
