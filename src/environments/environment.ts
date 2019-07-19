@@ -3,7 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  // agregado para firebase
+  firebaseConfig: {
+    apiKey: "AIzaSyAQD-eLZ3czZeOHah6DTN3BmIGKJJk3Tk8",
+    authDomain: "lavaderoapp.firebaseapp.com",
+    databaseURL: "https://lavaderoapp.firebaseio.com",
+    projectId: "lavaderoapp",
+    storageBucket: "lavaderoapp.appspot.com",
+    messagingSenderId: "637744671689",
+    appId: "1:637744671689:web:96f114691cc3c98d"
+  }
 };
 
 /*

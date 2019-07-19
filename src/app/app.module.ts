@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 //import { AppRoutingModule } from './app-routing.module'; // se definen las rutas en este archivo
@@ -14,6 +17,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShippingComponent } from './shipping/shipping.component';
 import { CustomerListComponent } from './Lavadero/customer-list/customer-list.component';
 import { MessagesComponent } from './messages/messages.component';
+
+// Firebase
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -30,6 +38,8 @@ import { MessagesComponent } from './messages/messages.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     //AppRoutingModule
     //ReactiveFormsModule,
     RouterModule.forRoot([
@@ -40,7 +50,11 @@ import { MessagesComponent } from './messages/messages.component';
 
       // lavadero
       { path: 'customersLavadero', component: CustomerListComponent }
-    ])
+    ]),
+
+    // Firebase db connection
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
